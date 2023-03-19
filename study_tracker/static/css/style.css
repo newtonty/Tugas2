@@ -1,0 +1,15 @@
+.login .card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.make .card{
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.btn-group{
+    padding-left: 20px;
+}

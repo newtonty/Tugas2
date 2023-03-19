@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+<title>Study Tracker</title>
+
+<body>
+    <br>
+    <h5>Hai {{name}}, kamu memiliki {{jumlah}} tugas yang harus dikerjakan!</h5>
+
+    <br>
+    <br>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        {% for assignment in list_of_assignments %}
+        <div class="col">
+            <div class="card" style="width: 19rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{assignment.name}}</h5>
+                  <p class="card-text">{{assignment.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Subject: {{assignment.subject}}</li>
+                  <li class="list-group-item">Progress: {{assignment.progress}}</li>
+                  <li class="list-group-item">Deadline: {{assignment.date}}</li>
+                </ul>
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                        <div class="col">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{% url 'study_tracker:modify_assignment' assignment.pk %}">
+                                    <button type="button" class="btn btn-primary">
+                                        Ubah
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="{% url 'study_tracker:delete_assignment' assignment.pk %}">
+                                    <button type="button" class="btn btn-primary">
+                                        Hapus
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <br>
+    <a href="{% url 'study_tracker:create_assignment' %}">
+        <button type="button" class="btn btn-primary">
+            Tugas Baru
+        </button>
+    </a>
+    
+    <br>
+    <br>
+    <footer>
+        <div class="footer">
+            <p>Sesi terakhir login: {{ last_login }}</p>
+        </div>
+    </footer>
+</body>
+{% endblock content %}

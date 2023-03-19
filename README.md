@@ -133,3 +133,56 @@ Membuat fungsi logout pada views
 Source:
 Kelas Terbuka. (2018). Tutorial Django 1.11 Bahasa Indonesia. Retrieved from https://youtube.com/playlist?list=PLZS-MHyEIRo6p_RwsWntxMO5QAqIHHHld
 2023 PBP Fasilkom UI. (2023). Tutorial 3. Retrieved from https://pbp-fasilkom-ui.github.io/genap-2023/tutorial/tutorial-3/
+
+# TUGAS 5
+*tidak dapat deplow ke Railway
+![image](https://user-images.githubusercontent.com/113079090/226182270-972b3570-8309-436c-b4dd-a24021a8d0a9.png)
+
+## Tag HTML5
+Beberapa tag HTML5 yang saya ketahui adalah:
+<a> untuk mendefinisikan link
+<br> untuk memberikan space antar baris
+<body> untuk mendefinisikan body dari page
+<button> untuk membuat tombol
+<div> untuk melakukan grouping terhadap elemen html
+<footer> untuk membuat footer
+<form> untuk membuat form
+<head> untuk memuat informasi mengenai dokumen
+<header> untuk merepresentasikan header dokumen
+<h1> <h2> ... <h6> untuk membuat heading
+<label> untuk membuat label
+<img> untuk menampilkan gambar
+<li> untuk menampilkan list
+<nav> untuk membuat nav
+<p> untuk menampilkan teks
+<title> untuk memberikan judul pada halaman
+
+## CSS Selector
+beberapa selector CSS yang saya ketahui adalah:
+.class1 .class2 memilih class2 yang berada pada class1
+element.class memilih element yang berada pada class
+:hover kondisional apabila yang dipilih selector ditunjuk mouse, maka akan melakukan perintah
+
+## Pengimplementasian
+1. Menginstal bootstrap, menulis script pada head base.html, dan menambahkan app bootstrap5 pada settings.py
+
+![image](https://user-images.githubusercontent.com/113079090/226183098-c61b3276-4204-489d-91da-1d1133b4434b.png)
+![image](https://user-images.githubusercontent.com/113079090/226183197-0568f167-8205-447c-bfb8-f574adc69df5.png)
+![image](https://user-images.githubusercontent.com/113079090/226183209-521b0d3f-6722-414a-a54a-9e871ba02166.png)
+
+2. Memasukan konten form login, register, add tugas ke dalam card (hanya agar rapi saja). Melakukan cutomisasi button menggunakan template bootstrap
+
+3. Memasukan setiap data tugas dan button ke dalam card dengan for loop. Menggunakan deck agar layout card menjadi lebih rapi.
+
+4. Menambahkan fungsi modify_assignment dan delete_assignment ke dalam views.py.
+![image](https://user-images.githubusercontent.com/113079090/226183540-c08ea100-ba6e-483f-b19e-4641a3b92742.png)
+
+5. Menambahkan file modify_assignment.html pada template
+![image](https://user-images.githubusercontent.com/113079090/226183588-bab4f9cb-486b-4850-b925-ec1bca3401ec.png)
+
+6. Melakukan routing url untuk fungsi modify_assignment dan delete_assignment
+
+Source
+Bing Chat. https://drive.google.com/drive/folders/1tH66Yd6UKnJXhluhHA6cWRQv6Gu-OQ4w?usp=sharing (Chat saya arsipkan dalam bentuk PDF)
+Kelas Terbuka. (2018). Tutorial Django 1.11 Bahasa Indonesia. Retrieved from https://youtube.com/playlist?list=PLZS-MHyEIRo6p_RwsWntxMO5QAqIHHHld
+2023 PBP Fasilkom UI. (2023). Tutorial 4. Retrieved from https://pbp-fasilkom-ui.github.io/genap-2023/tutorial/tutorial-3/

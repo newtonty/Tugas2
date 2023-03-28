@@ -186,3 +186,20 @@ Source
 Bing Chat. https://drive.google.com/drive/folders/1tH66Yd6UKnJXhluhHA6cWRQv6Gu-OQ4w?usp=sharing (Chat saya arsipkan dalam bentuk PDF)
 Kelas Terbuka. (2018). Tutorial Django 1.11 Bahasa Indonesia. Retrieved from https://youtube.com/playlist?list=PLZS-MHyEIRo6p_RwsWntxMO5QAqIHHHld
 2023 PBP Fasilkom UI. (2023). Tutorial 4. Retrieved from https://pbp-fasilkom-ui.github.io/genap-2023/tutorial/tutorial-3/
+
+# TUGAS 6
+## Asynchronous and Synchronous
+1. Transmisi sinkronus lebih cepat dibanding asinkronus
+2. Transmisi sinkronus lebih berat dibanding asinkronus
+3. Transmisi sinkronus memiliki interval waktu konstan, sedangkan asinkronus random
+4. Urutan sinkronus adalah click, wait, dan refresh. Sedangkan asinkronus dapat terus berinteraksi dengan page saat melakukan data load.
+
+## Paradigma Event Driven
+Paradigma event driven yang beragam membuat javascript mendukung konsep object oriented programming, imperative programming, dan functional programming. Adapun pada pengimplementasian ini menggunakan ajax sehingga memungkinkan transmisi asinkronus.
+
+## Asynchronous Ajax
+ajax akan menampung event dari user dan melakukan transfer data yang kemudian akan diproses secara asynchronous saat sebuah event terjadi.
+
+## Langkah pengimplemantasian
+1. Membuat views AJAX
+2. Memodifikasi tracker.html dengan javascript

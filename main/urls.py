@@ -4,5 +4,5 @@ from main.views import *
 
 urlpatterns = [
     path('', home, name='home'),
-    path('study_tracker/', include('study_tracker.urls')),
+    path('tracker/', include('study_tracker.urls')),
 ]

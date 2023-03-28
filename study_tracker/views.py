@@ -1,23 +1,20 @@
-from django.shortcuts import render
-from study_tracker.models import AssignmentRecord
-from django.http import HttpResponseRedirect
-from study_tracker.forms import AssignmentRecordForm
-from django.urls import reverse
-from django.http import HttpResponse
-from django.core import serializers
-from django.shortcuts import redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
 import datetime
-from study_tracker.forms import CustomUserCreationForm
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.core import serializers
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from study_tracker.models import AssignmentRecord
+from study_tracker.forms import AssignmentRecordForm, CustomUserCreationForm
 
 
 # Create your views here.
 
-@login_required(login_url='/study_tracker/login/')
+@login_required(login_url='/tracker/login/')
 def show_tracker(request):
     assignment_data = AssignmentRecord.objects.all()
     context = {
@@ -91,6 +88,29 @@ def delete_assignment(request, id):
     assignment.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('study_tracker:show_tracker'))
+
+@csrf_exempt
+def create_assignment_ajax(request):  
+# create object of form
+    form = AssignmentRecordForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        data = AssignmentRecord.objects.last()
+
+        # parsing the form data into json
+        result = {
+            'id':data.id,
+            'name':data.name,
+            'subject':data.subject,
+            'date':data.date,
+            'progress':data.progress,
+            'description':data.description,
+        }
+        return JsonResponse(result)
+
+    context = {'form': form}
+    return render(request, "create_assignment.html", context)
 
 
 def login_user(request):

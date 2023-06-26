@@ -30,7 +30,7 @@ DEBUG = True
 
 APP_NAME = os.getenv('APP_NAME', '')
 
-ALLOWED_HOSTS = [f'https://{APP_NAME}.up.railway.app', 'localhost', 'https://study-tracker-nataya.domcloud.io']
+ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://study-tracker-nataya.domcloud.io']
 
 # Application definition
